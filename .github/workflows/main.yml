@@ -1,0 +1,30 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4         # Checks-out the repo under $GITHUB_WORKSPACE, so this job can access it
+      - uses: actions/setup-node@v4.1.0   # Sets-up the node.js runtime on the virtual machine
+
+      # Run the building commands
+      - name: Install and Build 🔧
+        run: |
+          npm ci
+          npm run build
+
+      # Run the deployment commands
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.7.2
+        with:
+          folder: dist/client
+          clean: true
