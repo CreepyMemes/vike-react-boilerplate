@@ -1,3 +1,5 @@
+[![pages-build-deployment](https://github.com/CreepyMemes/vike-react-boilerplate/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/CreepyMemes/vike-react-boilerplate/actions/workflows/pages/pages-build-deployment)
+
 # SSG React boilerplate
 
 ## This template code uses `vite`, `vike`, `react`, `prettier`, `eslint`
