@@ -6,7 +6,9 @@ export default defineConfig({
     plugins: [
         react(),
         vike({
-            prerender: true,
+            prerender: {
+                noExtraDir: true,
+            },
         }),
     ],
 });
