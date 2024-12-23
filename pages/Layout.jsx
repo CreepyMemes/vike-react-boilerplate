@@ -8,11 +8,11 @@ function Layout({ children }) {
     return (
         <PageLayout>
             <Sidebar>
-                {/* Note: added 'vike-react-boilerplate' just for github nested domain, no need if you deploy on root url  */}
-                <a className="navitem" href="vike-react-boilerplate/">
+                {/* Note: added '/vike-react-boilerplate/' just for github nested domain, no need if you deploy on root url  */}
+                <a className="navitem" href="/vike-react-boilerplate/">
                     Home
                 </a>
-                <a className="navitem" href="vike-react-boilerplate/about">
+                <a className="navitem" href="/vike-react-boilerplate/about">
                     About
                 </a>
             </Sidebar>
