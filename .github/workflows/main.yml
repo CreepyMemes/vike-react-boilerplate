@@ -13,18 +13,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4         # Checks-out the repo under $GITHUB_WORKSPACE, so this job can access it
-      - uses: actions/setup-node@v4.1.0   # Sets-up the node.js runtime on the virtual machine
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
 
-      # Run the building commands
+      # Sets-up the node.js runtime on the virtual machine
+      - name: Configure Node 🌐
+        uses: actions/setup-node@v4.1.0 
+        with:
+          node-version: '20.18.0'
+          
+      # Installs the npm dependancies and buils the project
       - name: Install and Build 🔧
         run: |
           npm ci
           npm run build
 
-      # Run the deployment commands
+      # Deploys the project to Github Pages
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.7.2
         with:
           folder: dist/client
+          branch: gh-pages
           clean: true
