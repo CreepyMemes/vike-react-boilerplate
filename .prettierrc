@@ -27,6 +27,12 @@
       "options": {
         "tabWidth": 2
       }
+    },
+    {
+      "files": "*.config.js",
+      "options": {
+        "tabWidth": 2
+      }
     }
   ]
 }
